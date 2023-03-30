@@ -11,15 +11,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FavoriteBorderIcon from '@mui/icons-material/Favorite';
 
-const URL = "http://localhost:8000/comment";
-const addURL = "http://localhost:8000/addcomment";
+const URL = "/comment/";
+const addURL = "/addcomment/";
 
 function Discuss() {
     const ValidUser = async () => {
 
         let token = localStorage.getItem("usersdatatoken");
         // console.log(token);
-        const res = await fetch("http://localhost:8000/validateUser", {
+        const res = await fetch("/validateUser/", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -172,7 +172,7 @@ function Discuss() {
 
     const sendRequestUpdate = async (event) => {
         // console.log(event.id);
-        let updateURL = `http://localhost:8000/updatelikes/${event.id}`;
+        let updateURL = `/updatelikes/${event.id}/`;
 
         await axios.put(updateURL, {
             text: String(event.text),

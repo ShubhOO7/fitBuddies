@@ -264,7 +264,7 @@ function BookList() {
 
         let token = localStorage.getItem("usersdatatoken");
         // console.log(token);
-        const res = await fetch("http://localhost:8000/validateUser", {
+        const res = await fetch("/validateUser/", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

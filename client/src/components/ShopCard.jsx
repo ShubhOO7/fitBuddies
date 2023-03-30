@@ -6,7 +6,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const addURL = "http://localhost:8000/addToCart";
+const addURL = "/addToCart/";
 
 function Book(books) {
     const { id, count, name, description, price, img, link } = books.book;

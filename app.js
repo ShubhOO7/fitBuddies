@@ -1,4 +1,5 @@
 require("dotenv").config();
+const path = require('path');
 const express = require("express");
 const app = express();
 require("./db/conn");
@@ -23,6 +24,18 @@ app.use(cookiParser());
 app.use(cors());
 app.use("/", router);
 app.use('/payment' , paymentRouter);
+
+
+
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", function (_, res) {
+    res.sendFile(
+        path.join(__dirname, "./client/build/index.html"),
+        function (err) {
+            res.status(500).send(err);
+        }
+    );
+});
 
 app.get("/payment/getkey", (req, res) =>
   res.status(200).json({ key: process.env.RAZORPAY_API_KEY })

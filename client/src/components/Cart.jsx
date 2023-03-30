@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
+import Logo from '../Assets/FitLogo.png';
 
 // /Users/shubhamkanojia/VS-CODE/Project_774/client/src/Css/cart.css
 import { useNavigate, NavLink } from 'react-router-dom';
@@ -15,7 +16,7 @@ function Cart() {
 
         let token = localStorage.getItem("usersdatatoken");
         // console.log(token);
-        const res = await fetch("http://localhost:8000/validateUser", {
+        const res = await fetch("/validateUser/", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -84,9 +85,9 @@ function Cart() {
             amt = amt + (element.price * element.quantity);
         });
         // console.log(amt);
-        const { data: { key } } = await axios.get("http://www.localhost:8000/payment/getkey");
+        const { data: { key } } = await axios.get("/payment/getkey/");
 
-        const { data: { order } } = await axios.post("http://localhost:8000/payment/checkout", { amt });
+        const { data: { order } } = await axios.post("/payment/checkout/", { amt });
         // console.log(key);
         // console.log(order.amount);
         // console.log(order.id);
@@ -98,7 +99,7 @@ function Cart() {
             "currency": "INR",
             "name": "FitBuddies",
             "description": "Paying to fit-buddies",
-            "image": "https://example.com/your_logo",
+            "image": Logo,
             "order_id": order.id,
             "handler": function (response) {
                 paymentId = response.razorpay_payment_id;
@@ -110,9 +111,9 @@ function Cart() {
 
 
                 const data1 =
-                    axios.post("http://localhost:8000/payment/paymentverification", { paymentId, orderId, signatureId });
+                    axios.post("/payment/paymentverification/", { paymentId, orderId, signatureId });
 
-                const data2 = fetch("http://localhost:8000/deleteCart", {
+                const data2 = fetch("/deleteCart/", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -122,7 +123,7 @@ function Cart() {
                     .then(result => {
                         // console.log(result);
                     });
-                const data3 = axios.post("http://localhost:8000/payment/createorder", {
+                const data3 = axios.post("/payment/createorder/", {
                     products, orderId, EmailUsed, NameUsed, AddressUsed
                 });
 
@@ -258,7 +259,7 @@ function Cart() {
         // filteredProduct.email = EmailUsed;s
 
 
-        const data = fetch("http://localhost:8000/updateCart", {
+        const data = fetch("/updateCart/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -430,7 +431,7 @@ function Cart() {
 
 
     const getCart = async () => {
-        const data = await fetch("http://localhost:8000/getCart", {
+        const data = await fetch("/getCart/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
