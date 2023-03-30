@@ -1,0 +1,95 @@
+/* Community  */
+.c2  {
+    background-color: #fff ;
+    /* margin-top: 0 ; */
+  }
+  
+  .container{
+    margin-top: 80px;
+  }
+  
+  .image{
+    margin-right: 1%;
+  }
+  .card {
+    background-color: #fff;
+    border: none
+  }
+  
+  .form-color {
+    /* background-color: #1c1c1c; */
+  }
+  
+  .form-control {
+    height: 48px;
+    border-radius: 25px
+  }
+  
+  .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #35b69f;
+    outline: 0;
+    box-shadow: none;
+    text-indent: 10px
+  }
+  
+  .c-badge {
+    background-color: #ffffff;
+    color: rgb(255, 0, 0);
+    height: 50px;
+    font-size: 15px;
+    width: 92px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px
+  }
+  
+  .comment-text {
+    font-size: 13px
+  }
+  
+  .wish {
+    color: #ff0000
+  }
+  
+  .user-feed {
+    font-size: 14px;
+    margin-top: 12px;
+    
+  }
+
+/* Community */
+.cummunityHead{
+    margin-top: "-10%";
+}
+.Cummunity_input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    margin: 10% 2%;
+}
+
+.CButton {
+    background-color: #1c1c1c;
+    border: 2px solid #1c1c1c;
+    color: #ffffff;
+    transition: all 0.25s linear;
+    /* cursor: pointer; */
+  }
+  
+  .CButton::after {
+    /* position: relative;
+    right: 0;
+    content: " \276f";
+    transition: all 0.15s linear; */
+  }
+  
+  .CButton:hover {
+    background-color: #fe0100;
+    border-color: #fe0100;
+  }

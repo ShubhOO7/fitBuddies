@@ -1,0 +1,29 @@
+#postAndButton {
+    display: flex;
+    /* width: 100%; */
+    flex-direction: row;
+    margin: 0 3vw 8vh 3vw;
+  }
+  
+  #postPreview img {
+    object-fit: cover;
+    width: 60vw;
+    min-width: 200px;
+    height: 23vh;
+    margin: 0 0.5vh 0 0.5vh;
+  }
+  
+  #postPreview h2 {
+    width: 60vw;
+    min-width: 200px;
+    word-wrap: break-word;
+    font-size: clamp(1em, 1.8em, 2em);
+    margin: 0.5vh;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  #postPreview {
+    cursor: pointer;
+  }
+  
